@@ -22,48 +22,34 @@ export class Zabbix {
     this.auth = null;
   }
 
-  async request(method: string, params: IPostConfigBodyParams) {
-    try {
-      const response = await Post({
-        url: this.url,
-        method: method,
-        params: params,
-        auth: this.auth,
-        options: this.options,
-      });
+  async request(method: string, params: IPostConfigBodyParams): Promise<any> {
+    const response = await Post({
+      url: this.url,
+      method: method,
+      params: params,
+      auth: this.auth,
+      options: this.options,
+    });
 
-      if (response.result) {
-        return response.result;
-      } else {
-        throw JSON.stringify(response);
-      }
-    } catch (error) {
-      throw error;
+    if (response.result) {
+      return response.result;
+    } else {
+      throw JSON.stringify(response);
     }
   }
 
-  async login() {
-    try {
-      const result = await this.request("user.login", {
-        user: this.user,
-        password: this.password,
-      });
-      this.auth = result;
-      return result;
-    } catch (error) {
-      throw error;
-    }
+  async login(): Promise<string> {
+    const result = await this.request("user.login", {
+      user: this.user,
+      password: this.password,
+    });
+    this.auth = result;
+    return result;
   }
 
-  async logout() {
-    try {
-      const result = await this.request("user.logout", []);
-      this.auth = null;
-      return result;
-    } catch (error) {
-      throw error;
-    } finally {
-      this.auth = null;
-    }
+  async logout(): Promise<boolean> {
+    const result = await this.request("user.logout", []);
+    this.auth = null;
+    return result;
   }
 }

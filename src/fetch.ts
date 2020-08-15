@@ -13,29 +13,25 @@ interface IPostConfig {
   options?: RequestInit;
 }
 
-export async function Post(config: IPostConfig) {
-  try {
-    const url = config.url;
-    const auth = config.auth;
-    const method = config.method;
-    const params = config.params;
-    const options = config.options;
+export async function Post(config: IPostConfig): Promise<any> {
+  const url = config.url;
+  const auth = config.auth;
+  const method = config.method;
+  const params = config.params;
+  const options = config.options;
 
-    const configInit: RequestInit = Object.assign({
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        jsonrpc: "2.0",
-        method: method,
-        params: params,
-        id: String(Math.random()),
-        auth: auth,
-      }),
-    }, options);
+  const configInit: RequestInit = Object.assign({
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      jsonrpc: "2.0",
+      method: method,
+      params: params,
+      id: String(Math.random()),
+      auth: auth,
+    }),
+  }, options);
 
-    const response = await fetch(url, configInit);
-    return response.json();
-  } catch (error) {
-    throw error;
-  }
+  const response = await fetch(url, configInit);
+  return response.json();
 }
