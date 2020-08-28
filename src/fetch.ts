@@ -13,6 +13,7 @@ interface IPostConfig {
   options?: RequestInit;
 }
 
+// deno-lint-ignore no-explicit-any
 export async function Post(config: IPostConfig): Promise<any> {
   const url = config.url;
   const auth = config.auth;

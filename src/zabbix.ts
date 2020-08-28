@@ -22,6 +22,7 @@ export class Zabbix {
     this.auth = null;
   }
 
+  // deno-lint-ignore no-explicit-any
   async request(method: string, params: IPostConfigBodyParams): Promise<any> {
     const response = await Post({
       url: this.url,
