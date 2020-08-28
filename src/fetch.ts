@@ -1,7 +1,7 @@
 export interface IPostConfigBodyParams {
   user?: string;
   password?: string;
-  // deno-lint-ignore no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [propName: string]: any;
 }
 
@@ -13,7 +13,7 @@ interface IPostConfig {
   options?: RequestInit;
 }
 
-// deno-lint-ignore no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function Post(config: IPostConfig): Promise<any> {
   const url = config.url;
   const auth = config.auth;
