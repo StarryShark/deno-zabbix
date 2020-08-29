@@ -12,7 +12,9 @@ The following is a set of guidelines for contributing to `deno-zabbix`. These ar
 
 * [Setup your Development Environment](#setup-your-development-environment)
 
-* [Run Tests](#run-tests)
+  * [Configure TypeScript ESLint](#configure-typescript-eslint)
+
+  * [Run Tests](#run-tests)
 
 ## Code of Conduct
 
@@ -28,8 +30,25 @@ This project and everyone participating in it is governed by the [Deno-Zabbix Co
 
 ## Setup your Development Environment
 
-TBD
+* Install [deno](https://deno.land/manual/getting_started/installation)
 
-## Run Tests
+  ```shell
+  deno --version
+  ```
 
-TBD
+* Configure [editor](https://deno.land/manual/getting_started/setup_your_environment)
+
+* Use [GitHub Guide](https://guides.github.com/activities/forking/) for Forking Projects workflow
+
+### Configure [TypeScript ESLint](https://github.com/typescript-eslint/typescript-eslint/tree/master/docs/getting-started/linting)
+
+```shell
+npm install
+npm run lint
+```
+
+### Run Tests
+
+```shell
+npm test
+```
