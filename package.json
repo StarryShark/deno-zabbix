@@ -23,9 +23,12 @@
     "url": "git+https://github.com/sumitgoelpw/deno-zabbix.git"
   },
   "scripts": {
+    "deno-fmt": "deno fmt --check --unstable --ignore=node_modules",
     "deno-lint": "deno lint --unstable --ignore=node_modules || true",
     "eslint": "eslint . --ext .ts",
     "lint": "npm run deno-lint && npm run eslint",
+    "pretest": "npm run deno-fmt && npm run lint",
+    "test": "echo #TODO",
     "up": "npm-check -y -E && rm -rf ./node_modules package-lock.json && npm i"
   },
   "devDependencies": {
