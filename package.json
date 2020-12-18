@@ -32,10 +32,10 @@
     "up": "npm-check -y -E && rm -rf ./node_modules package-lock.json && npm i"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "3.10.1",
-    "@typescript-eslint/parser": "3.10.1",
-    "eslint": "7.7.0",
+    "@typescript-eslint/eslint-plugin": "4.10.0",
+    "@typescript-eslint/parser": "4.10.0",
+    "eslint": "7.15.0",
     "npm-check": "5.9.2",
-    "typescript": "4.0.2"
+    "typescript": "4.1.3"
   }
 }
