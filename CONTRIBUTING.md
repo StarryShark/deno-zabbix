@@ -4,8 +4,9 @@
 
 The following is a set of guidelines for contributing to `deno-zabbix`. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
-<!-- markdownlint-disable-next-line MD001 -->
+<!-- markdownlint-disable MD001 -->
 #### Table Of Contents
+<!-- markdownlint-enable MD001 -->
 
 * [Code of Conduct](#code-of-conduct)
 
@@ -46,6 +47,12 @@ This project and everyone participating in it is governed by the [Deno-Zabbix Co
 ```shell
 npm install
 npm run lint
+```
+
+### Run super-linter locally
+
+```shell
+docker run --rm -e RUN_LOCAL=true -e VALIDATE_TYPESCRIPT_STANDARD=false -v $(pwd):/tmp/lint github/super-linter
 ```
 
 ### Run Tests
