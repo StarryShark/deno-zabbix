@@ -4,7 +4,7 @@
 
 The following is a set of guidelines for contributing to `deno-zabbix`. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
-<!-- markdownlint-disable-next-line header-increment -->
+<!-- markdownlint-disable-next-line MD001 -->
 #### Table Of Contents
 
 * [Code of Conduct](#code-of-conduct)
